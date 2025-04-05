@@ -1,4 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 function Login() {
+
+    const navigate = useNavigate()
+
+    const irParaRegister = () => {
+        navigate("/register")
+    };
+
     return (
         <>
             <main className="flex justify-center items-center h-screen bg-gray-400">
@@ -7,17 +16,17 @@ function Login() {
                     <div className="flex justify-between flex-col w-90 h-65">
                         <div className="flex flex-col">
                             <label htmlFor="username">Usuário</label>
-                            <input className="border blue-red-700 h-12 border-gray-500 rounded-md p-2" type="text" name="username" placeholder="Digite o seu usuário" required/>
+                            <input className="border blue-red-700 h-12 border-gray-500 rounded-md p-2" type="text" name="username" placeholder="Digite o seu usuário" required />
                         </div>
                         <div className="flex flex-col">
                             <label htmlFor="password">Senha</label>
-                            <input className="border blue-red-700 h-12 border-gray-500 rounded-md p-2" type="password" name="password" placeholder="Digite o seu email" required/>
+                            <input className="border blue-red-700 h-12 border-gray-500 rounded-md p-2" type="password" name="password" placeholder="Digite o seu email" required />
                         </div>
-                        <button className="border border-none rounded-md w-full h-12 bg-blue-300">Entrar</button>
+                        <button className="border border-none rounded-md w-full h-12 bg-blue-300 duration-400 hover:bg-blue-400 hover:scale-102 cursor-pointer">Entrar</button>
 
                         <div className="w-90 flex justify-between text-sm">
                             <p>Esqueceu sua senha?</p>
-                            <p>Ainda não tem uma conta?</p>
+                            <p onClick={irParaRegister} className="text-blue-600 hover:text-blue-400 cursor-pointer">Ainda não tem uma conta?</p>
                         </div>
                     </div>
                 </form>
